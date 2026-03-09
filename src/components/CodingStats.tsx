@@ -22,12 +22,15 @@ const CodingStats = () => {
   return (
     <section className="coding-section section-container" id="achievements">
       <div className="coding-container">
+        <span className="coding-kicker">Problem Solving Profile</span>
         <h2 className="title">
           Coding <span>Achievements</span>
         </h2>
-        <p className="coding-sub para">
-          Recruiters value strong problem-solving ability, so this section highlights my DSA consistency.
-        </p>
+        <div className="coding-sub-wrap">
+          <p className="coding-sub para">
+            Recruiters value strong problem-solving ability, so this section highlights my DSA consistency.
+          </p>
+        </div>
 
         <div className="coding-grid">
           {stats.map((item) => (
