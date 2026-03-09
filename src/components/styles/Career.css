@@ -209,6 +209,12 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .career-section {
+    padding-top: 80px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
   .career-info-box {
     flex-direction: column;
     gap: 10px;
@@ -224,6 +230,10 @@
 
   .career-info h3 {
     text-align: left;
+  }
+
+  .career-info h4 {
+    width: auto;
   }
 
   .career-timeline {
@@ -242,9 +252,10 @@
 
   .career-section h2 {
     width: 100%;
-    font-size: 45px;
-    line-height: 45px;
+    font-size: 36px;
+    line-height: 1.1;
     margin-top: 0px;
+    margin-bottom: 40px;
   }
 
   .career-info-in {
@@ -252,7 +263,7 @@
   }
 
   .career-info h3 {
-    font-size: 33px;
+    font-size: 22px;
   }
 
   .career-info-in,

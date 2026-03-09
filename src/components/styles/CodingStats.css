@@ -90,3 +90,20 @@
     margin-bottom: 20px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .coding-container h2 {
+    font-size: 34px;
+  }
+
+  .coding-card {
+    padding: 18px;
+  }
+
+  .coding-value {
+    font-size: 34px;
+  }
+
+  .coding-card h3 {
+    font-size: 18px;
+  }
+}
