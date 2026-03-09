@@ -2,6 +2,8 @@ import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 
 const Contact = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
@@ -51,13 +53,20 @@ const Contact = () => {
               Instagram <MdArrowOutward />
             </a>
           </div>
-          <div className="contact-box">
+          <div className="contact-box contact-footer-box">
+            <p className="contact-footer-label">Portfolio crafted by</p>
             <h2>
-              Designed and Developed <br /> by <span>Sumit Kumar Prasad</span>
+              <span>Sumit Kumar Prasad</span>
             </h2>
+            <p className="contact-footer-tagline">
+              Full Stack Developer focused on backend systems, APIs, and scalable product engineering.
+            </p>
             <h5>
-              <MdCopyright /> 2025 Sumit Kumar Prasad
+              <MdCopyright /> {currentYear} Sumit Kumar Prasad
             </h5>
+            <a href="/#" className="contact-top-link" data-cursor="disable">
+              Back to top <MdArrowOutward />
+            </a>
           </div>
         </div>
       </div>
