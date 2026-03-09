@@ -28,7 +28,7 @@ const CodingStats = () => {
         </h2>
         <div className="coding-sub-wrap">
           <p className="coding-sub para">
-            Recruiters value strong problem-solving ability, so this section highlights my DSA consistency.
+            This section showcases my competitive coding discipline, problem-solving depth, and consistency in DSA.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import "./styles/Work.css";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 type Project = {
   title: string;
@@ -49,6 +49,7 @@ const projects: Project[] = [
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const totalProjects = projects.length;
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -78,12 +79,19 @@ const Work = () => {
       .map((item) => item.trim())
       .filter(Boolean);
 
+  const formatSlideNumber = (num: number) => num.toString().padStart(2, "0");
+
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
-        <h2>
-          My <span>Work</span>
-        </h2>
+        <div className="work-head">
+          <h2>
+            My <span>Work</span>
+          </h2>
+          <p>
+            Selected projects focused on backend architecture, real-time systems, and secure API design.
+          </p>
+        </div>
 
         <div className="carousel-wrapper">
           {/* Navigation Arrows */}
@@ -114,35 +122,41 @@ const Work = () => {
             >
               {projects.map((project, index) => (
                 <div className="carousel-slide" key={index}>
-                  <div className="carousel-content">
-                    <div className="carousel-info">
-                      <div className="carousel-number">
-                        <h3>0{index + 1}</h3>
-                      </div>
-                      <div className="carousel-details">
-                        <h4>{project.title}</h4>
-                        <p className="carousel-category">
-                          {project.category}
-                        </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <div className="carousel-tool-chips">
-                            {getStackItems(project.tools).map((tool) => (
-                              <span key={tool} className="carousel-tool-chip">
-                                {tool}
-                              </span>
-                            ))}
-                          </div>
+                  <div className="carousel-card">
+                    <div className="carousel-top-row">
+                      <span className="carousel-category-badge">{project.category}</span>
+                      <span className="carousel-count">
+                        {formatSlideNumber(index + 1)} / {formatSlideNumber(totalProjects)}
+                      </span>
+                    </div>
+
+                    <div className="carousel-content">
+                      <div className="carousel-info">
+                        <div className="carousel-number">
+                          <h3>{formatSlideNumber(index + 1)}</h3>
                         </div>
-                        <a
-                          className="carousel-github-link"
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          data-cursor="disable"
-                        >
-                          View Project on GitHub
-                        </a>
+                        <div className="carousel-details">
+                          <h4>{project.title}</h4>
+                          <div className="carousel-tools">
+                            <span className="tools-label">Tools & Features</span>
+                            <div className="carousel-tool-chips">
+                              {getStackItems(project.tools).map((tool) => (
+                                <span key={tool} className="carousel-tool-chip">
+                                  {tool}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                          <a
+                            className="carousel-github-link"
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            data-cursor="disable"
+                          >
+                            View Project on GitHub <MdArrowOutward />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
