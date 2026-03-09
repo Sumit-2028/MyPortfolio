@@ -1,5 +1,0 @@
-declare module "gsap-trial/SplitText" {
-  export const SplitText: any;
-  const SplitText: any;
-  export default SplitText;
-}
